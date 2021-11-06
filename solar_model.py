@@ -13,7 +13,7 @@ def calculate_force(body, space_objects):
     **body** — тело, для которого нужно вычислить дейстующую силу.
     **space_objects** — список объектов, которые воздействуют на тело.
     """
-
+    import math
     body.Fx = body.Fy = 0
     for obj in space_objects:
         if body == obj:
@@ -22,8 +22,8 @@ def calculate_force(body, space_objects):
         rx = obj.x - body.x
         ry = obj.y - body.y
         F = body.m * obj.m / (gravitational_constant * r)
-        Fx = F * (1 + (ry/rx)**2)**(-0.5)*sign(rx)
-        Fy = F * (1 + (rx/ry)**2)**(-0.5)*sign(ry)
+        Fx = F * (1 + (ry/rx)**2)**(-0.5)*math.sign(rx)
+        Fy = F * (1 + (rx/ry)**2)**(-0.5)*math.sign(ry)
         body.Fx += Fx
         body.Fy += Fy
 
