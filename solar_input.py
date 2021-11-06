@@ -70,13 +70,13 @@ def parse_planet_parameters(line, planet):
     """
     # будет происходить задание параметров для данной планеты
     parameters = line.split()
-    star.R = parameters[1]
-    star.color = parameters[2]
-    star.m = parameters[3]
-    star.x = parameters[4]
-    star.y = parameters[5]
-    star.Vy = parameters[6]
-    star.Vx =  parameters[7]
+    planet.R = parameters[1]
+    planet.color = parameters[2]
+    planet.m = parameters[3]
+    planet.x = parameters[4]
+    planet.y = parameters[5]
+    planet.Vy = parameters[6]
+    planet.Vx =  parameters[7]
 
 
 
@@ -100,6 +100,3 @@ def write_space_objects_data_to_file(output_filename, space_objects):
 
 if __name__ == "__main__":
     print("This module is not for direct call!")
-
-read_space_objects_data_from_file("solar_system.txt")
-print(read_space_objects_data_from_file("solar_system.txt"))
