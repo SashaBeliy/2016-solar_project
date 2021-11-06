@@ -54,8 +54,8 @@ def parse_star_parameters(line, star):
     star.m = parameters[3]
     star.x = parameters[4]
     star.y = parameters[5]
-    star.Vy = parameters[6]
-    star.Vx = parameters[7]
+    star.Vx = parameters[6]
+    star.Vy = parameters[7]
 
 
 def parse_planet_parameters(line, planet):
@@ -80,8 +80,8 @@ def parse_planet_parameters(line, planet):
     planet.m = parameters[3]
     planet.x = parameters[4]
     planet.y = parameters[5]
-    planet.Vy = parameters[6]
-    planet.Vx = parameters[7]
+    planet.Vx = parameters[6]
+    planet.Vy = parameters[7]
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
@@ -102,9 +102,11 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     with open(output_filename, 'a') as out_file:
         for obj in space_objects:
             if isinstance(obj, Star):
-                out_file.write('f"Star {obj.R} {obj.color} {obj.m} {obj.x} {obj.y} {obj.Vx} {obj.Vy} {\n}"')
+                out_file.write(
+                    'f"Star {obj.R} {obj.color} {obj.m} {obj.x} {obj.y} {obj.Vx} {obj.Vy} {\n}"')
             if isinstance(obj, Planet):
-                out_file.write('f"Planet {obj.R} {obj.color} {obj.m} {obj.x} {obj.y} {obj.Vx} {obj.Vy} {\n}"')
+                out_file.write(
+                    'f"Planet {obj.R} {obj.color} {obj.m} {obj.x} {obj.y} {obj.Vx} {obj.Vy} {\n}"')
 
 # FIXME: хорошо бы ещё сделать функцию, сохранающую статистику в заданный файл...
 
