@@ -13,7 +13,6 @@ def calculate_force(body, space_objects):
     **body** — тело, для которого нужно вычислить дейстующую силу.
     **space_objects** — список объектов, которые воздействуют на тело.
     """
-    import math
     body.Fx = body.Fy = 0
     for obj in space_objects:
         if body == obj:
@@ -38,7 +37,7 @@ def move_space_object(body, dt):
     body.x += body.Vx * dt + ax * dt**2 / 2
     body.Vx += ax*dt
     ay = body.Fy/body.m
-    body.y += body.Vx * dt + ay * dt**2 / 2
+    body.y += body.Vy * dt + ay * dt**2 / 2
     body.Vy += ay*dt
 
 
